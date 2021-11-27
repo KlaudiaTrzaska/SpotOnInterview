@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -27,22 +28,27 @@ public class UIElement {
         return driver.findElement(locator);
     }
 
-    protected WebElement firstElement() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        return driver.findElements(locator).get(0);
-    }
-
     public void assertContains(String txt) {
+
         assertThat(element().getText(),containsString(txt));
     }
 
     public void scrollIntoView() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element());
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public void assertHasCSSClass(String cssClass) {
         String actualCSSClasses = element().getAttribute("class");
         assertThat(actualCSSClasses,containsString(cssClass));
+    }
+
+    public void waitUntilNotVisible() {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
+    public void waitUntilClickable() {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 }

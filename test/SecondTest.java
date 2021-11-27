@@ -45,7 +45,11 @@ public class SecondTest {
                 .assertSuccessMessageWhenProductIsAddedToTheCart()
                 .clickOnProceedToCheckoutButton();
         new CartPage(driver)
-                .assertShirtQuantityIsChanged("2");
+                .assertProductQuantityEquals(2)
+                .changeShirtQuantity(2)
+                .deleteDressFromCart()
+                .assertPrintedSummerDressNotPresent()
+                .assertProductQuantityEquals(2);
 
     }
 }

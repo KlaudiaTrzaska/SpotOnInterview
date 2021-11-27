@@ -41,7 +41,7 @@ public class SearchResultsPage extends Page{
     }
 
     private Button compareButton() {
-        return new Button(driver, By.className("compare-form"));
+        return new Button(driver, By.className("bt_compare"));
     }
 
     public SearchResultsPage(WebDriver driver) {
@@ -94,7 +94,9 @@ public class SearchResultsPage extends Page{
     }
 
     public SearchResultsPage clickOnCompareButton() {
+        compareButton().waitUntilClickable();
         compareButton().click();
+        compareButton().waitUntilNotVisible();
         return this;
     }
 
