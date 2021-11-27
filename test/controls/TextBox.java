@@ -13,4 +13,12 @@ public class TextBox extends UIElement {
             element().sendKeys(text);
     }
 
+    public void clear() {
+        element().clear();
+    }
+
+    public String getText() {
+       return element().getText();
+    }
+
 }

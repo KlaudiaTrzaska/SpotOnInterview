@@ -1,4 +1,4 @@
-package models;
+package utils;
 
 public class UserLoginDetails {
     public static UserLoginDetails INVALID_USER_DETAILS = new UserLoginDetails("invalid.user@gmail.com", "invalid-password");

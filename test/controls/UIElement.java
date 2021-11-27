@@ -1,6 +1,7 @@
 package controls;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,8 +27,18 @@ public class UIElement {
         return driver.findElement(locator);
     }
 
+    protected WebElement firstElement() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return driver.findElements(locator).get(0);
+    }
+
     public void assertContains(String txt) {
         assertThat(element().getText(),containsString(txt));
+    }
+
+    public void scrollIntoView() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element());
     }
 
     public void assertHasCSSClass(String cssClass) {

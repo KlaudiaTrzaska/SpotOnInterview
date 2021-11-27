@@ -5,11 +5,13 @@ import controls.TextBox;
 import controls.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import models.UserLoginDetails;
+import utils.UserLoginDetails;
 
-public class LoginPage {
+public class LoginPage extends Page {
 
-    private WebDriver driver;
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
 
     private TextBox emailTextBox(){
         return new TextBox(driver,By.id("email"));
@@ -27,9 +29,6 @@ public class LoginPage {
         return new UIElement(driver, By.id("errors1"));
     }
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
 
     public LoginPage open(){
         driver.get("https://www.cleartrip.com/signin");

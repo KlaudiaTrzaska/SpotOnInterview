@@ -2,10 +2,9 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
-import models.UserLoginDetails;
+import utils.UserLoginDetails;
 
 public class ClearTripLoginTest {
 
