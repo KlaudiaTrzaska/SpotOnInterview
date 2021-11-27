@@ -1,18 +1,17 @@
 package pages;
 
-import controls.Text;
-import org.junit.Assert;
+import controls.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ContactUsErrors extends Page {
 
-    private Text errorField() {
-        return new Text(driver, By.className("alert-danger"));
+    private UIElement errorField() {
+        return new UIElement(driver, By.className("alert-danger"));
     }
 
-    private Text errorNumber() {
-        return new Text(driver, new By.ByCssSelector("div.alert-danger > p"));
+    private UIElement errorNumber() {
+        return new UIElement(driver, new By.ByCssSelector("div.alert-danger > p"));
     }
 
     public ContactUsErrors(WebDriver driver) {

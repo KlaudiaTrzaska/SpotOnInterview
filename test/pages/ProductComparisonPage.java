@@ -1,13 +1,13 @@
 package pages;
 
-import controls.Text;
+import controls.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ProductComparisonPage extends Page {
 
-    private Text productComparisonHeader() {
-        return new Text(driver, By.id("products-comparison"));
+    private UIElement productComparisonHeader() {
+        return new UIElement(driver, By.id("products-comparison"));
     }
 
     public ProductComparisonPage(WebDriver driver) {

@@ -11,7 +11,6 @@ public class ContactUsPage extends Page {
     private UIElement validation() {
         return new UIElement(driver, new By.ByCssSelector("p.form-group"));
     }
-    private DropDown subjectHeadingDropDown() { return new DropDown(driver, new By.ByCssSelector("select[name=id_contact]")); }
     private TextBox emailInput(){
         return new TextBox(driver,By.id("email"));
     }
@@ -30,8 +29,8 @@ public class ContactUsPage extends Page {
         return new Button(driver,By.className("page-heading"));
     }
 
-    private Text contactUsHeader() {
-        return new Text(driver, By.className("page-heading"));
+    private UIElement contactUsHeader() {
+        return new UIElement(driver, By.className("page-heading"));
     }
 
     private UIElement successMessage() {

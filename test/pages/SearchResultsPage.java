@@ -1,7 +1,7 @@
 package pages;
 
 import controls.Button;
-import controls.Text;
+import controls.UIElement;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,16 +12,16 @@ public class SearchResultsPage extends Page{
     private final String SUCCESS_MESSAGE = "Product successfully added to your shopping cart";
 
 
-    private Text productListingHeader() {
-        return new Text(driver, By.className("product-listing"));
+    private UIElement productListingHeader() {
+        return new UIElement(driver, By.className("product-listing"));
     }
 
-    private Text shirtName() {
-        return new Text(driver, By.cssSelector("h5[itemprop='name']>.product-name"));
+    private UIElement shirtName() {
+        return new UIElement(driver, By.cssSelector("h5[itemprop='name']>.product-name"));
     }
 
-    private Text dressName() {
-        return new Text(driver, By.cssSelector("h5[itemprop='name']>a[title='Printed Dress']"));
+    private UIElement dressName() {
+        return new UIElement(driver, By.cssSelector("h5[itemprop='name']>a[title='Printed Dress']"));
     }
 
     private Button addToCartButton() {
