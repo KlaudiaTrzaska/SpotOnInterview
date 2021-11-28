@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class Page {
 
     protected WebDriver driver;
+
     public Page(WebDriver driver) {
         this.driver = driver;
     }

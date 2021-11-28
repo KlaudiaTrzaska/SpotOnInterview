@@ -23,16 +23,17 @@ public class ContactUsErrors extends Page {
         return this;
     }
 
-    public ContactUsErrors assertInvalidEmail () {
+    public ContactUsErrors assertInvalidEmail() {
         errorField().assertContains("Invalid email address.");
         return this;
     }
 
-    public ContactUsErrors assertMessageBlank () {
+    public ContactUsErrors assertMessageBlank() {
         errorField().assertContains("The message cannot be blank.");
         return this;
     }
-    public ContactUsErrors assertSubjectNotProvided () {
+
+    public ContactUsErrors assertSubjectNotProvided() {
         errorField().assertContains("Please select a subject from the list provided.");
         return this;
     }

@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class SearchResultsPage extends Page{
+public class SearchResultsPage extends Page {
 
     private final String SUCCESS_MESSAGE = "Product successfully added to your shopping cart";
 
@@ -59,6 +59,7 @@ public class SearchResultsPage extends Page{
         dressName().assertContains(dressName);
         return this;
     }
+
     public SearchResultsPage assertShirtName(String shirtName) {
         shirtName().scrollIntoView();
         shirtName().assertContains(shirtName);
@@ -99,8 +100,4 @@ public class SearchResultsPage extends Page{
         compareButton().waitUntilNotVisible();
         return this;
     }
-
-
-
-
 }

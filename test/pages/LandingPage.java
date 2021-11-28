@@ -17,10 +17,6 @@ public class LandingPage extends Page {
         return new Button(driver, By.name("submit_search"));
     }
 
-    private Button contactUsButton() {
-        return new Button(driver, By.id("contact-link"));
-    }
-
     public LandingPage(WebDriver driver) {
         super(driver);
     }
@@ -42,11 +38,4 @@ public class LandingPage extends Page {
         waitUntilLoaded();
         return this;
     }
-
-    public LandingPage clickOnContactUsButton() {
-        contactUsButton().click();
-        return this;
-    }
-
-
 }

@@ -14,7 +14,7 @@ public class ContactUsTest {
     private String VALID_EMAIL = "test@test.test";
 
     @BeforeClass
-    public static void setUp() throws Exception {
+    public static void setUp() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
         Dimension dem = new Dimension(1140, 900);
@@ -22,7 +22,7 @@ public class ContactUsTest {
     }
 
     @AfterClass
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         driver.quit();
     }
 

@@ -13,16 +13,16 @@ public class SecondTest {
     private static ChromeDriver driver;
 
     @BeforeClass
-    public static void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver","resources/chromedriver");
+    public static void setUp() {
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
-        Dimension dem = new Dimension(1140,900);
+        Dimension dem = new Dimension(1140, 900);
         driver.manage().window().setSize(dem);
 
     }
 
     @AfterClass
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         driver.quit();
     }
 

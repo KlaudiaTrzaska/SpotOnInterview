@@ -10,15 +10,10 @@ public class TextBox extends UIElement {
     }
 
     public void fill(String text) {
-            element().sendKeys(text);
+        element().sendKeys(text);
     }
 
     public void clear() {
         element().clear();
     }
-
-    public String getText() {
-       return element().getText();
-    }
-
 }

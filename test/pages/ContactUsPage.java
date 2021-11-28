@@ -11,22 +11,26 @@ public class ContactUsPage extends Page {
     private UIElement validation() {
         return new UIElement(driver, new By.ByCssSelector("p.form-group"));
     }
-    private TextBox emailInput(){
-        return new TextBox(driver,By.id("email"));
+
+    private TextBox emailInput() {
+        return new TextBox(driver, By.id("email"));
     }
-    private TextBox orderReferenceInput(){
-        return new TextBox(driver,By.id("id_order"));
+
+    private TextBox orderReferenceInput() {
+        return new TextBox(driver, By.id("id_order"));
     }
-    private Button sendButton(){
-        return new Button(driver,By.id("submitMessage"));
+
+    private Button sendButton() {
+        return new Button(driver, By.id("submitMessage"));
     }
-    private TextBox messageTextBox(){
-        return new TextBox(driver,By.id("message"));
+
+    private TextBox messageTextBox() {
+        return new TextBox(driver, By.id("message"));
     }
 
     // this is a dummy button to force validation checks on current input field
     private Button unselectButton() {
-        return new Button(driver,By.className("page-heading"));
+        return new Button(driver, By.className("page-heading"));
     }
 
     private UIElement contactUsHeader() {
@@ -41,7 +45,7 @@ public class ContactUsPage extends Page {
         super(driver);
     }
 
-    public ContactUsPage open(){
+    public ContactUsPage open() {
         driver.get(url);
         return this;
     }
@@ -57,25 +61,13 @@ public class ContactUsPage extends Page {
         return this;
     }
 
-    public ContactUsPage selectWebmaster() {
-        new Select(driver.findElement(new By.ByCssSelector("select[name=id_contact]")))
-                .selectByIndex(2);
-        return this;
-    }
-
-    public ContactUsPage clearAndInputEmail (String input){
+    public ContactUsPage clearAndInputEmail(String input) {
         emailInput().clear();
         emailInput().fill(input);
         return this;
     }
 
-    public ContactUsPage clearAndInputOrderReference (String input){
-        orderReferenceInput().clear();
-        orderReferenceInput().fill(input);
-        return this;
-    }
-
-    public ContactUsPage clearAndInputMessage (String input){
+    public ContactUsPage clearAndInputMessage(String input) {
         messageTextBox().clear();
         messageTextBox().fill(input);
         return this;
@@ -91,12 +83,12 @@ public class ContactUsPage extends Page {
         return this;
     }
 
-    public ContactUsPage assertEmailValidationOk(){
+    public ContactUsPage assertEmailValidationOk() {
         validation().assertHasCSSClass("form-ok");
         return this;
     }
 
-    public ContactUsPage assertEmailValidationError(){
+    public ContactUsPage assertEmailValidationError() {
         validation().assertHasCSSClass("form-error");
         return this;
     }
